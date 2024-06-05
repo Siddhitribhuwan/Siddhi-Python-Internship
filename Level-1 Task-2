@@ -1,0 +1,25 @@
+def convert_temperature(value, unit):
+ 
+  if unit.upper() == "C":
+    fahrenheit = (value * 1.8) + 32
+    return f"{value} degrees Celsius is equal to {fahrenheit:.2f} degrees Fahrenheit"
+  elif unit.upper() == "F":
+    celsius = (value - 32) / 1.8
+    return f"{value} degrees Fahrenheit is equal to {celsius:.2f} degrees Celsius"
+  else:
+    return "Invalid unit of measurement. Please enter 'C' or 'F'."
+
+while True:
+  try:
+    value = float(input("Enter a temperature value: "))
+    unit = input("Enter the unit (C or F): ")
+    converted_temp = convert_temperature(value, unit)
+    print(converted_temp)
+    break
+  except ValueError:
+    print("Invalid input. Please enter a numerical value for temperature.")
+
+converted_temp, new_unit = convert_temperature(temperature, unit)
+
+if converted_temp is not None:
+  print(f"{temperature:.2f} degrees {unit} is equal to {converted_temp:.2f} degrees {new_unit}.")
