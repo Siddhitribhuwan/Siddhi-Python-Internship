@@ -1,0 +1,27 @@
+def count_word_occurrences(filename):
+
+  words = {}
+  try:
+    with open(filename, 'r') as file:
+      for line in file:
+        for word in line.lower().split():
+          word = word.strip()  
+          if word in words:
+            words[word] += 1
+          else:
+            words[word] = 1
+  except FileNotFoundError:
+    print(f"Error: File '{filename}' not found.")
+    return None
+
+  sorted_words = dict(sorted(words.items()))
+  return sorted_words
+
+if __name__ == "__main__":
+  filename = input("Enter the filename: ")
+  word_counts = count_word_occurrences(filename)
+
+  if word_counts:
+    print("Word counts:")
+    for word, count in word_counts.items():
+      print(f"{word}: {count}")
