@@ -1,4 +1,9 @@
-def convert_temperature(value, unit):
+#Task: Temperature Conversion
+
+#Create a Python program that converts temperatures between Celsius and Fahrenheit. Prompt the user to enter a temperature value and the unit of measurement, and then display the
+#converted temperature.
+
+def convert_temp(value, unit):
  
   if unit.upper() == "C":
     fahrenheit = (value * 1.8) + 32
@@ -19,7 +24,7 @@ while True:
   except ValueError:
     print("Invalid input. Please enter a numerical value for temperature.")
 
-converted_temp, new_unit = convert_temperature(temperature, unit)
+converted_temp, new_unit = convert_temp(temperature, unit)
 
 if converted_temp is not None:
   print(f"{temperature:.2f} degrees {unit} is equal to {converted_temp:.2f} degrees {new_unit}.")
