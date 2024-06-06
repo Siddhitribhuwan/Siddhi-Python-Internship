@@ -1,14 +1,14 @@
-def fibonacci_recursive(n):
-  
+#Task: Fibonacci Sequence
 
+#Write a Python function that generates the Fibonacci sequence up to a given number of terms. The function should take an integer input from the user and display the Fibonacci sequence up to that number of terms.
+
+def fibonacci_rec(n):
   if n <= 1:
     return n
   else:
-    return fibonacci_recursive(n-1) + fibonacci_recursive(n-2)
+    return fibonacci_rec(n-1) + fibonacci_rec(n-2)
 
-# Get user input
 num_terms = int(input("Enter the number of terms for the Fibonacci sequence: "))
 
-# Generate and print the sequence
-fibonacci_sequence = [fibonacci_recursive(i) for i in range(num_terms)]
+fibonacci_sequence = [fibonacci_rec(i) for i in range(num_terms)]
 print(f"Fibonacci sequence up to {num_terms} terms: {fibonacci_sequence}")
