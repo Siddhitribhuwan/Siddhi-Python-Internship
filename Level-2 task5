@@ -1,4 +1,8 @@
-def count_word_occurrences(filename):
+#Task: File Manipulation
+
+#Write a Python program that reads a text file and counts the occurrences of each word in the file. Display the results in alphabetical order along with their respective counts.
+
+def count_word_occ(filename):
 
   words = {}
   try:
@@ -19,7 +23,7 @@ def count_word_occurrences(filename):
 
 if __name__ == "__main__":
   filename = input("Enter the filename: ")
-  word_counts = count_word_occurrences(filename)
+  word_counts = count_word_occ(filename)
 
   if word_counts:
     print("Word counts:")
