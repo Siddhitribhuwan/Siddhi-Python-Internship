@@ -1,21 +1,25 @@
+#Task: Number Guesser
+
+#Create a number guessing game where the program generates a random number between a specified range, and the user tries to guess it. Provide feedback to the user if their guess is too high or too low.
+
 import random
 
-def guess_number(lower_bound, upper_bound):
+def guess_num(lower_bound, upper_bound):
   if lower_bound >= upper_bound:
     print("Invalid range. Lower bound must be less than upper bound.")
     return
 
-  secret_number = random.randint(lower_bound, upper_bound)
+  secret_num = random.randint(lower_bound, upper_bound)
   guesses = 0
 
   while True:
     try:
       guess = int(input(f"Guess a number between {lower_bound} and {upper_bound}: "))
       guesses += 1
-      if guess == secret_number:
+      if guess == secret_num:
         print(f"Congratulations! You guessed the number in {guesses} tries.")
         break
-      elif guess < secret_number:
+      elif guess < secret_num:
         print("Too low, try again.")
       else:
         print("Too high, try again.")
